@@ -1,0 +1,11 @@
+//TODO add media-query or similar
+.layout-auth-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .auth-page {
+    max-width: 1200px;
+    min-width: 1200px;
+  }
+}
