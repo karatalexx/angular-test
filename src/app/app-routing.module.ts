@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AuthComponent } from './pages/auth/auth.component';
+import { AuthModule } from './pages/auth/auth.module';
 
 
 const routes: Routes = [
   {
     path: '**',
-    component: AuthComponent,
+    loadChildren: () => import('./pages/auth/auth.module').then(mod => mod.AuthModule),
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,  { enableTracing: true } )],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
