@@ -13,11 +13,13 @@ import {
   MatButtonModule,
 } from '@angular/material';
 import { SignUpFormComponent } from './sign-up-form/sign-up-form.component';
+import { LogInFormComponent } from './log-in-form/log-in-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     SignUpFormComponent,
+    LogInFormComponent,
     AuthComponent,
   ],
   imports: [
