@@ -15,7 +15,8 @@ class UserController {
       if(!newUser){
         // todo add error
       }
-      res.send("Registration successful");
+      const newUserAuth = await UserService.authUser(req.body);
+      res.send(newUserAuth);
     } catch (err) {
       next(err);
     }
