@@ -31,7 +31,7 @@ class UserService {
     const { password, email, ...otherFields } = fields;
     // validate
     if (await User.findOne({ email })) {
-      throw 'Email "' + userName + '" is already taken';
+      throw 'Email "' + email + '" is already taken';
     }
     return new User({
       email,
