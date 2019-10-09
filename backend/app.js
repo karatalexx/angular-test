@@ -1,8 +1,11 @@
 const express = require("express");
 const app = express();
 require("./dbConnect");
+const cors = require('cors')
 const bodyParser = require("body-parser");
 const { authMiddleware } = require("./middleware/authMiddleware");
+
+app.use(cors())
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
