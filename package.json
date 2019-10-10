@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "seed-db": "node -r dotenv/config ./backend/seed.js",
+    "seed-db": "node -r dotenv/config ./backend/seed",
     "start:BE": "node -r dotenv/config ./backend/index.js"
   },
   "private": true,
