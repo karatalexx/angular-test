@@ -10,6 +10,5 @@ const OfferSchema = new Schema({
   ratedCount: { type: Number, required: true },
   img: { type: String, required: true },
 });
-
-mongoose.model("offer", OfferSchema);
-module.exports = mongoose.model("offer");
+const OfferModel = mongoose.model("offer", OfferSchema);
+module.exports = OfferModel;

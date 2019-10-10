@@ -10,5 +10,6 @@ const adminUserData = {
 
 module.exports.seedUser = async function() {
   await User.deleteOne({ email: adminUserData.email });
-  return await UserService.createUser(adminUserData, true);
+  await UserService.createUser(adminUserData, true);
+  return true;
 };

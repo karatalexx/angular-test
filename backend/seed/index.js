@@ -1,10 +1,15 @@
 require("../dbConnect");
 const { seedUser } = require("./user");
+const { seedOffers } = require("./offer");
 
 async function seed() {
-  return await seedUser();
+  await seedUser();
+  await seedOffers();
+  return true;
 }
 
-seed().finally(() => {
+seed()
+.catch((err) => {console.error(err)})
+.finally(() => {
   process.exit(0);
 });
