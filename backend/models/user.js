@@ -1,8 +1,8 @@
-var bcrypt = require("bcrypt");
-var mongoose = require("mongoose");
-var Schema = mongoose.Schema;
+const bcrypt = require("bcrypt");
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
-var UsersSchema = new Schema({
+const UsersSchema = new Schema({
   email: { type: String, unique: true, required: true },
   hashed_password: { type: String, required: true },
   firstName: { type: String, required: true },
