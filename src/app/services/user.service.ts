@@ -1,7 +1,13 @@
 import { Injectable } from '@angular/core';
-import { map } from 'rxjs/operators';
+import { of } from 'rxjs';
+import { map, catchError } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
+import { StorageService } from './storage.service';
+import { createAuthHeaders } from '../helpers/authHeadersHelper';
+import { Router } from '@angular/router';
+
+const USER_DATA_KEY = 'user_data';
 
 export type UserType = {
   lastName: string,
@@ -25,8 +31,42 @@ export class UserService {
   private currentUser: UserType | null = null;
 
   constructor(
-    private http: HttpClient
-  ) { }
+    private router: Router,
+    private http: HttpClient,
+    private storageService: StorageService,
+  ) {
+    this.init();
+
+  }
+
+  private init() {
+    const userDataString = this.storageService.getItem(USER_DATA_KEY);
+    if (!userDataString) {
+      return;
+    }
+    const userData = JSON.parse(userDataString);
+    if (!userData.access_token) {
+      this.storageService.removeItem(USER_DATA_KEY);
+      return;
+    }
+
+    this.currentUser = userData;
+    this.http.get(environment.apiHost + '/ping', {
+      headers: createAuthHeaders(userData.access_token),
+    })
+      .pipe(
+        catchError(() => {
+          this.logOut();
+          return of(false);
+        })
+      )
+      .subscribe();
+  }
+
+  private setCurrentUser(user: UserType) {
+    this.currentUser = user;
+    this.storageService.setItem(USER_DATA_KEY, JSON.stringify(user));
+  }
 
   public isAdmin(): boolean {
     return this.currentUser && this.currentUser.isAdmin;
@@ -45,7 +85,7 @@ export class UserService {
   public logIn(email, password) {
     return this.http.post(environment.apiHost + '/login', { email, password }).pipe(
       map((res) => {
-        this.currentUser = <UserType>res;
+        this.setCurrentUser(res as UserType);
         return res;
       })
     )
@@ -54,9 +94,16 @@ export class UserService {
   public signUp(user: UserSignUpType) {
     return this.http.post(environment.apiHost + '/sign-up', user).pipe(
       map((res) => {
-        this.currentUser = <UserType>res;
+        this.setCurrentUser(res as UserType);
         return res;
       })
     );
+  }
+
+  public logOut() {
+    this.currentUser = null;
+    this.storageService.removeItem(USER_DATA_KEY);
+    this.router.navigate(['/login']);
+    return true;
   }
 }

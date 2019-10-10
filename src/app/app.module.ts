@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserService } from './services/user.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { StorageService } from './services/storage.service';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
   ],
   providers: [
     HttpClient,
+    StorageService,
     UserService,
   ],
   bootstrap: [
