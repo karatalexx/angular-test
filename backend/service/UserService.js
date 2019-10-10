@@ -9,7 +9,7 @@ class UserService {
     const {
       hashed_password,
       ...userWithoutSensitiveData
-    } = await User.findById(id);
+    } = await User.findById(id).lean();
     return userWithoutSensitiveData;
   }
 

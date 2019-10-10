@@ -17,5 +17,6 @@ app.use(bodyParser.json());
 app.use("/login", require("./routes/login"));
 app.use("/sign-up", require("./routes/sign-up"));
 app.use("/ping", authMiddleware, require("./routes/ping"));
+app.use("/offer", authMiddleware, require("./routes/offer"));
 
 module.exports = app;
