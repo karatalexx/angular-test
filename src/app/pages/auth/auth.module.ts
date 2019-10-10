@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AuthComponent } from './auth.component';
-import { RouterModule } from '@angular/router';
 import {
   MatCardModule,
   MatTabsModule,
@@ -15,6 +14,7 @@ import {
 import { SignUpFormComponent } from './sign-up-form/sign-up-form.component';
 import { LogInFormComponent } from './log-in-form/log-in-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AuthRoutingModule } from './auth-routing.module';
 
 @NgModule({
   declarations: [
@@ -32,12 +32,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     MatButtonModule,
     MatIconModule,
-    RouterModule.forChild([
-      {
-        path: '',
-        component: AuthComponent,
-      },
-    ])
+    AuthRoutingModule,
   ],
   providers: [
     { provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher }
