@@ -1,0 +1,37 @@
+//TODO add media-query or similar
+.layout-main-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .main-page {
+    width: 1200px;
+    min-height: 80vh;
+
+    .main-page-swiper-container {
+      margin: 50px;
+      width: calc(100% - 100px);
+      min-height: 80vh;
+    }
+    .image-container-wrapper {
+      .image-container {
+        margin: 16px; // Material theme card padding //TODO! import from variables
+      }
+    }
+
+    ::ng-deep .swiper-container {
+      margin-left: -50px;
+      padding-left: 50px;
+      padding-right: 50px;
+      height: auto;
+      .swiper-button-next {
+        -webkit-filter: saturate(0) grayscale(100%) brightness(130%);
+        filter: saturate(0) grayscale(100%) brightness(130%);
+      }
+      .swiper-button-prev {
+        -webkit-filter: saturate(0) grayscale(100%) brightness(130%);
+        filter: saturate(0) grayscale(100%) brightness(130%);
+      }
+    }
+  }
+}
