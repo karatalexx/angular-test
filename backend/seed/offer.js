@@ -2,7 +2,7 @@ const OfferModel = require("../models/offer");
 
 const offersData = [
   {
-    header: "photography",
+    text: "photography",
     title: "Get pictures in front of chic landmark",
     titleColor: "#6A5A56",
     price: 102,
@@ -11,7 +11,7 @@ const offersData = [
     img: "stub"
   },
   {
-    header: "history",
+    text: "history",
     title: "Louvre-Art History lecture tour and afternoon tea",
     titleColor: "#6A5A56",
     price: 72,
@@ -20,7 +20,7 @@ const offersData = [
     img: "stub"
   },
   {
-    header: "photography",
+    text: "photography",
     title: "Get pictures in front of chic landmark",
     titleColor: "#6A5A56",
     price: 102,
@@ -29,7 +29,7 @@ const offersData = [
     img: "stub"
   },
   {
-    header: "photography",
+    text: "photography",
     title: "Get pictures in front of chic landmark",
     titleColor: "#6A5A56",
     price: 102,
@@ -38,7 +38,7 @@ const offersData = [
     img: "stub"
   },
   {
-    header: "photography",
+    text: "photography",
     title: "Get pictures in front of chic landmark",
     titleColor: "#6A5A56",
     price: 102,

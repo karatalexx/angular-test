@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
+import { UserService } from 'src/app/services/user.service';
+import { ApiService } from 'src/app/services/api.service';
+import { OfferType } from "../../models/offer.model";
 
 @Component({
   selector: 'app-main-page',
@@ -21,9 +24,17 @@ export class MainPageComponent implements OnInit {
     pagination: false,
   };
 
-  constructor() { }
+  offers: OfferType[] = [];
+
+  constructor(
+    private apiService: ApiService,
+  ) { }
 
   ngOnInit() {
+    this.apiService.get('/offer')
+    .subscribe(offers => {
+      this.offers = offers as OfferType[];
+    });
   }
 
 }

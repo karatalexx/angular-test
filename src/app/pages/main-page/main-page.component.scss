@@ -13,8 +13,8 @@
       width: calc(100% - 100px);
       min-height: 80vh;
     }
-    .image-container-wrapper {
-      .image-container {
+    .offer-container-wrapper {
+      ::ng-deep.offer-container {
         margin: 16px; // Material theme card padding //TODO! import from variables
       }
     }

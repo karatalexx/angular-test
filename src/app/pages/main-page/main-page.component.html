@@ -3,40 +3,8 @@
     <mat-card>
       <mat-card-content class="main-page-swiper-container">
         <swiper [config]="config">
-          <div class="image-container-wrapper">
-            <mat-card class="image-container"
-              ><mat-card-content><span>1</span></mat-card-content></mat-card
-            >
-          </div>
-          <div class="image-container-wrapper">
-            <mat-card class="image-container"
-              ><mat-card-content><span>2</span></mat-card-content></mat-card
-            >
-          </div>
-          <div class="image-container-wrapper">
-            <mat-card class="image-container"
-              ><mat-card-content><span>3</span></mat-card-content></mat-card
-            >
-          </div>
-          <div class="image-container-wrapper">
-            <mat-card class="image-container"
-              ><mat-card-content><span>4</span></mat-card-content></mat-card
-            >
-          </div>
-          <div class="image-container-wrapper">
-            <mat-card class="image-container"
-              ><mat-card-content><span>5</span></mat-card-content></mat-card
-            >
-          </div>
-          <div class="image-container-wrapper">
-            <mat-card class="image-container"
-              ><mat-card-content><span>6</span></mat-card-content></mat-card
-            >
-          </div>
-          <div class="image-container-wrapper">
-            <mat-card class="image-container"
-              ><mat-card-content><span>7</span></mat-card-content></mat-card
-            >
+          <div *ngFor="let offer of offers" class="offer-container-wrapper">
+            <app-offer-card [offer]="offer"> </app-offer-card>
           </div>
         </swiper>
       </mat-card-content>

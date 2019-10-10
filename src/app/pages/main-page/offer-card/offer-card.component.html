@@ -1,0 +1,16 @@
+<mat-card class="offer-container">
+  <mat-card-content>
+    <img
+      mat-card-image
+      src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+    />
+    <mat-card-content>
+      <h2 [style.color]="offer.titleColor">
+        {{ offer.title }}
+      </h2>
+      <p>
+        {{offer.text}}
+      </p>
+    </mat-card-content>
+  </mat-card-content>
+</mat-card>
