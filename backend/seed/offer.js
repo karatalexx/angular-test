@@ -15,7 +15,7 @@ const offersData = [
     name: "Louvre-Art History lecture tour and afternoon tea",
     titleColor: "#6A5A56",
     price: 72,
-    rating: 5,
+    rating: 3,
     ratedCount: 14,
     img: "https://material.angular.io/assets/img/examples/shiba2.jpg"
   },
