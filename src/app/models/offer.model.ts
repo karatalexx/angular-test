@@ -1,6 +1,6 @@
 export type OfferType = {
-  text: string,
   title: string,
+  name: string,
   titleColor: number,
   price: number,
   rating: number,
