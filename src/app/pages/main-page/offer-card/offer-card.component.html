@@ -5,13 +5,13 @@
       src="https://material.angular.io/assets/img/examples/shiba2.jpg"
     />
     <mat-card-content>
-      <h2 [style.color]="offer.titleColor">
+      <h5 [style.color]="offer.titleColor">
         {{ offer.title }}
+      </h5>
+      <h3>
         {{ offer.name }}
-      </h2>
-      <p>
-        {{offer.text}}
-      </p>
+      </h3>
+      <p>${{ offer.price }} per person</p>
     </mat-card-content>
   </mat-card-content>
 </mat-card>
