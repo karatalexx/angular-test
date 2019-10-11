@@ -1,12 +1,18 @@
 //TODO add theming
-.offer-container{
+.offer-container {
   min-height: 28em;
+}
+.offer-image {
+  width: 150px;
+  height: 150px;
+  object-fit: scale-down;
+  margin: 1em;
 }
 .offer-rating {
   display: flex;
   align-items: center;
   .mat-icon {
-    color: #18AF86;
+    color: #18af86;
     font-size: 18px;
     height: 18px;
     width: 18px;

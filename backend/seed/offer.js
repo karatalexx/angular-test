@@ -8,7 +8,7 @@ const offersData = [
     price: 102,
     rating: 5,
     ratedCount: 205,
-    img: "stub"
+    img: "https://material.angular.io/assets/img/examples/shiba1.jpg"
   },
   {
     title: "history",
@@ -17,7 +17,7 @@ const offersData = [
     price: 72,
     rating: 5,
     ratedCount: 14,
-    img: "stub"
+    img: "https://material.angular.io/assets/img/examples/shiba2.jpg"
   },
   {
     title: "photography",
@@ -26,7 +26,7 @@ const offersData = [
     price: 102,
     rating: 5,
     ratedCount: 205,
-    img: "stub"
+    img: "https://material.angular.io/assets/img/examples/shiba1.jpg"
   },
   {
     title: "photography",
@@ -35,7 +35,7 @@ const offersData = [
     price: 102,
     rating: 5,
     ratedCount: 205,
-    img: "stub"
+    img: "https://material.angular.io/assets/img/examples/shiba2.jpg"
   },
   {
     title: "photography",
@@ -44,7 +44,7 @@ const offersData = [
     price: 102,
     rating: 5,
     ratedCount: 205,
-    img: "stub"
+    img: "https://material.angular.io/assets/img/examples/shiba1.jpg"
   }
 ];
 

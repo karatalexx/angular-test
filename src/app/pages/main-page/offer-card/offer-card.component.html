@@ -2,7 +2,8 @@
   <mat-card-content>
     <img
       mat-card-image
-      src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+      [src]="offer.img"
+      class="offer-image"
     />
     <mat-card-content>
       <h5 [style.color]="offer.titleColor">
