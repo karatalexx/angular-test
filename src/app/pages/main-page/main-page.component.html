@@ -3,11 +3,21 @@
     <mat-card>
       <mat-card-content class="main-page-swiper-container">
         <swiper [config]="config">
-          <div *ngFor="let offer of offers; let i = index" class="offer-container-wrapper">
-            <app-offer-card [offer]="offer" (onDeleteCurrentOffer)="deleteOffer(i)"> </app-offer-card>
+          <div
+            *ngFor="let offer of offers; let i = index"
+            class="offer-container-wrapper"
+          >
+            <app-offer-card
+              [offer]="offer"
+              (onDeleteCurrentOffer)="deleteOffer(i)"
+            >
+            </app-offer-card>
           </div>
         </swiper>
       </mat-card-content>
+      <mat-card-actions>
+        <button mat-button color="primary" (click)="logOut()">Log Out</button>
+      </mat-card-actions>
     </mat-card>
   </div>
 </div>

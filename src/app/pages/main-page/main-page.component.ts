@@ -28,6 +28,7 @@ export class MainPageComponent implements OnInit {
 
   constructor(
     private apiService: ApiService,
+    private userService: UserService,
   ) { }
 
   ngOnInit() {
@@ -35,6 +36,10 @@ export class MainPageComponent implements OnInit {
       .subscribe(offers => {
         this.offers = offers as OfferType[];
       });
+  }
+
+  logOut() {
+    this.userService.logOut();
   }
 
   deleteOffer(index: number) {
