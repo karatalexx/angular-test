@@ -8,7 +8,7 @@ class OfferController {
 
   static async removeOfferById(req, res) {
     await OfferModel.findByIdAndDelete(req.params.id);
-    res.send('OK');
+    res.json({status: 'OK'});
   }
 }
 

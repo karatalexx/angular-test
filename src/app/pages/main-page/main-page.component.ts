@@ -32,9 +32,17 @@ export class MainPageComponent implements OnInit {
 
   ngOnInit() {
     this.apiService.get('/offer')
-    .subscribe(offers => {
-      this.offers = offers as OfferType[];
-    });
+      .subscribe(offers => {
+        this.offers = offers as OfferType[];
+      });
+  }
+
+  deleteOffer(index: number) {
+    const { _id: id } = this.offers[index];
+    this.apiService.delete(`/offer/${id}`)
+      .subscribe(() => {
+        this.offers = this.offers.filter(offer => offer._id !== id);
+      });
   }
 
 }

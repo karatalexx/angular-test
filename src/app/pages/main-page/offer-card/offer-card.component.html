@@ -19,5 +19,8 @@
         <span>{{ offer.ratedCount }}</span>
       </div>
     </mat-card-content>
+    <mat-card-actions *ngIf="isAdmin()">
+        <button mat-button color="primary" (click)="deleteCurrentOffer()" >Delete</button>
+    </mat-card-actions>
   </mat-card-content>
 </mat-card>

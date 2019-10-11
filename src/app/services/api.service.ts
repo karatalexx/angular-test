@@ -30,5 +30,18 @@ export class ApiService {
       );
   }
 
+  public delete(path: string, options = {}) {
+    return this.http.delete(environment.apiHost + path, {
+      ...options,
+      headers: createAuthHeaders(this.userService.getAuthToken()),
+    })
+      .pipe(
+        tap(
+          () => { },
+          () => { this.userService.logOut(); }
+        )
+      );
+  }
+
 
 }

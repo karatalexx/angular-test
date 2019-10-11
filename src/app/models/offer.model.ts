@@ -1,4 +1,5 @@
 export type OfferType = {
+  _id: string,
   title: string,
   name: string,
   titleColor: number,
