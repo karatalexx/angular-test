@@ -37,10 +37,9 @@ export class SignUpFormComponent {
       password: this.passwordFormControl.value
     }).subscribe(
       (userData, ...other) => {
-        console.log(userData, other)
       },
       (error) => {
-        console.log(error.error.message);
+        console.error(error.error.message);
         return true;
       }
     );

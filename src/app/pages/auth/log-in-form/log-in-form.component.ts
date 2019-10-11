@@ -26,10 +26,9 @@ export class LogInFormComponent {
     // TODO add validate fields
     this.userService.logIn(this.emailFormControl.value, this.passwordFormControl.value).subscribe(
       (userData, ...other) => {
-        console.log(userData, other)
       },
       (error) => {
-        console.log( error.error.message);
+        console.error( error.error.message);
         return true;
       }
     );
