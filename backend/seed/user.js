@@ -5,7 +5,7 @@ const adminUserData = {
   firstName: "admin",
   lastName: "admin",
   email: "admin@example.com",
-  password: "qwerqwer"
+  password: "uO4hb<pki>g>O%yP$sfI"
 };
 
 module.exports.seedUser = async function() {
