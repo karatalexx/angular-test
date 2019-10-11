@@ -25,13 +25,19 @@ export class LogInFormComponent {
   ]);
 
   onSubmit() {
-    // TODO add validate fields
+    if (
+      !this.emailFormControl.valid
+      || !this.passwordFormControl.valid
+    ) {
+      return;
+    }
+
     this.userService.logIn(this.emailFormControl.value, this.passwordFormControl.value).subscribe(
       (userData, ...other) => {
         this.router.navigate(['/main']);
       },
       (error) => {
-        console.error( error.error.message);
+        console.error(error.error.message);
         return true;
       }
     );

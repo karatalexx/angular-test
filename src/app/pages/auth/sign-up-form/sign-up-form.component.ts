@@ -31,7 +31,15 @@ export class SignUpFormComponent {
   ]);
 
   onSubmit() {
-    // TODO add validate fields
+    if (
+      !this.emailFormControl.valid
+      || !this.passwordFormControl.valid
+      || !this.firstNameFormControl.valid
+      || !this.lastNameFormControl.valid
+    ) {
+      return;
+    }
+
     this.userService.signUp({
       firstName: this.firstNameFormControl.value,
       lastName: this.lastNameFormControl.value,
