@@ -4,6 +4,12 @@ const bcrypt = require("bcrypt");
 
 const saltRounds = 10;
 
+class CreateUserError extends Error {
+  constructor(message) {
+    super(message);
+  }
+}
+
 class UserService {
   static async getById(id) {
     const {
@@ -31,7 +37,7 @@ class UserService {
     const { password, email, ...otherFields } = fields;
     // validate
     if (await User.findOne({ email })) {
-      throw 'Email "' + email + '" is already taken';
+      throw new CreateUserError('Email "' + email + '" is already taken');
     }
     return new User({
       email,
@@ -42,4 +48,7 @@ class UserService {
   }
 }
 
-module.exports = UserService;
+module.exports = {
+  UserService,
+  CreateUserError
+};

@@ -1,4 +1,4 @@
-const UserService = require("../service/UserService");
+const { UserService } = require("../service/UserService");
 const User = require("../models/user");
 
 const adminUserData = {

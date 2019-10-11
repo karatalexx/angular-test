@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { UserService } from 'src/app/services/user.service';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material';
 
 
 @Component({
@@ -12,6 +13,7 @@ import { Router } from '@angular/router';
 export class LogInFormComponent {
   constructor(
     private router: Router,
+    private snackBar: MatSnackBar,
     private userService: UserService
   ) { }
 
@@ -38,6 +40,7 @@ export class LogInFormComponent {
       },
       (error) => {
         console.error(error.error.message);
+        this.snackBar.open(error.error.message);
         return true;
       }
     );

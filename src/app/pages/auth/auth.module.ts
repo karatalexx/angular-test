@@ -10,6 +10,7 @@ import {
   MatInputModule,
   MatIconModule,
   MatButtonModule,
+  MatSnackBarModule,
 } from '@angular/material';
 import { SignUpFormComponent } from './sign-up-form/sign-up-form.component';
 import { LogInFormComponent } from './log-in-form/log-in-form.component';
@@ -30,6 +31,7 @@ import { AuthRoutingModule } from './auth-routing.module';
     MatFormFieldModule,
     FormsModule,
     ReactiveFormsModule,
+    MatSnackBarModule,
     MatButtonModule,
     MatIconModule,
     AuthRoutingModule,

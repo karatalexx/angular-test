@@ -1,4 +1,4 @@
-const UserService = require('../service/UserService');
+const { UserService, CreateUserError } = require("../service/UserService");
 
 class UserController {
   static async authenticate(req, res) {
@@ -11,10 +11,24 @@ class UserController {
 
   static async createUser(req, res, next) {
     try {
-      const newUser = await UserService.createUser(req.body);
-      if(!newUser){
-        // todo add error
+      let newUser;
+      try {
+        newUser = await UserService.createUser(req.body);
+      } catch (error) {
+        if (error instanceof CreateUserError) {
+          return res
+            .status(400)
+            .send({ message: error.message })
+            .end();
+        } else throw error;
       }
+      if (!newUser) {
+        return res
+          .status(400)
+          .send({ message: "Can't create user. Internal server error." })
+          .end();
+      }
+
       const newUserAuth = await UserService.authUser(req.body);
       res.send(newUserAuth);
     } catch (err) {
