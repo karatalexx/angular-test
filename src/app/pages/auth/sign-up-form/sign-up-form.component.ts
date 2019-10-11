@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { UserService } from 'src/app/services/user.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,6 +11,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class SignUpFormComponent {
   constructor(
+    private router: Router,
     private userService: UserService
   ) { }
 
@@ -37,6 +39,7 @@ export class SignUpFormComponent {
       password: this.passwordFormControl.value
     }).subscribe(
       (userData, ...other) => {
+        this.router.navigate(['/main']);
       },
       (error) => {
         console.error(error.error.message);
