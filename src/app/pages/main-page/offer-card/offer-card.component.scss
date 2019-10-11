@@ -1,0 +1,11 @@
+//TODO add theming
+.offer-rating {
+  display: flex;
+  align-items: center;
+  .mat-icon {
+    color: #18AF86;
+    font-size: 18px;
+    height: 18px;
+    width: 18px;
+  }
+}

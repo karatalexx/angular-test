@@ -12,6 +12,12 @@
         {{ offer.name }}
       </h3>
       <p>${{ offer.price }} per person</p>
+      <div class="offer-rating">
+        <mat-icon *ngFor="let item of countStars(); let i = index">
+          {{ i < offer.rating ? "star" : "star_border" }}
+        </mat-icon>
+        <span>{{ offer.ratedCount }}</span>
+      </div>
     </mat-card-content>
   </mat-card-content>
 </mat-card>

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MainPageComponent } from './main-page.component';
 import { MainPageRoutingModule } from './main-page-routing.module';
-import { MatCardModule } from '@angular/material';
+import { MatCardModule, MatIconModule } from '@angular/material';
 import { SwiperModule } from 'ngx-swiper-wrapper';
 import { OfferCardComponent } from './offer-card/offer-card.component';
 
@@ -17,6 +17,7 @@ import { OfferCardComponent } from './offer-card/offer-card.component';
     CommonModule,
     MainPageRoutingModule,
     MatCardModule,
+    MatIconModule,
     SwiperModule,
   ],
 })

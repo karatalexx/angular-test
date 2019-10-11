@@ -6,10 +6,11 @@ import { OfferType } from 'src/app/models/offer.model';
   templateUrl: './offer-card.component.html',
   styleUrls: ['./offer-card.component.scss']
 })
-export class OfferCardComponent{
+export class OfferCardComponent {
 
   @Input() offer: OfferType;
 
-  constructor() { }
-
+  countStars(): number[] {
+    return [...Array(5).keys()];
+  }
 }
