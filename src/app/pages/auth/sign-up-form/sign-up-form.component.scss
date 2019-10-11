@@ -1,7 +1,25 @@
 .example-form {
   width: 100%;
+  h2 {
+    text-align: center;
+  }
+  .name-fields {
+    .example-full-width {
+      width: calc(50% - 1em);
+      margin-right: 1em;
+      &:last-child {
+        width: 50%;
+        margin-right: 0;
+      }
+    }
+  }
 }
 
 .example-full-width {
   width: 100%;
+}
+
+.submit-button {
+  width: 100%;
+  color: white;
 }

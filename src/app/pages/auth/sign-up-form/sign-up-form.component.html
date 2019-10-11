@@ -1,26 +1,31 @@
 <form class="example-form" (ngSubmit)="onSubmit()">
-  <mat-form-field class="example-full-width">
-    <input
-      matInput
-      placeholder="First Name"
-      [formControl]="firstNameFormControl"
-      required
-    />
-    <mat-error *ngIf="firstNameFormControl.hasError('required')">
-      First Name is <strong>required</strong>
-    </mat-error>
-  </mat-form-field>
-  <mat-form-field class="example-full-width">
-    <input
-      matInput
-      placeholder="Last Name"
-      [formControl]="lastNameFormControl"
-      required
-    />
-    <mat-error *ngIf="lastNameFormControl.hasError('required')">
-      Last Name is <strong>required</strong>
-    </mat-error>
-  </mat-form-field>
+  <h2>
+    Sign Up for Free
+  </h2>
+  <div class="name-fields">
+    <mat-form-field class="example-full-width">
+      <input
+        matInput
+        placeholder="First Name"
+        [formControl]="firstNameFormControl"
+        required
+      />
+      <mat-error *ngIf="firstNameFormControl.hasError('required')">
+        First Name is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input
+        matInput
+        placeholder="Last Name"
+        [formControl]="lastNameFormControl"
+        required
+      />
+      <mat-error *ngIf="lastNameFormControl.hasError('required')">
+        Last Name is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+  </div>
   <mat-form-field class="example-full-width">
     <input
       matInput
@@ -63,5 +68,7 @@
       Password is <strong>required</strong>
     </mat-error>
   </mat-form-field>
-  <button mat-raised-button color="primary">GET STARTED</button>
+  <button mat-raised-button color="primary" class="submit-button">
+    GET STARTED
+  </button>
 </form>
